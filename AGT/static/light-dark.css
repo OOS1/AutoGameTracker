@@ -1,0 +1,15 @@
+/* static/light-dark-mode.css */
+
+/* Define styles for both light and dark modes */
+body.light-mode {
+    background-color: #ffffff; /* Light mode background color */
+    color: #000000; /* Light mode text color */
+}
+
+/* light-dark.css */
+body.dark-mode {
+    background-color: #1a1a1a; /* Dark background color */
+    color: #ffffff; /* Light text color */
+}
+
+/* Add more styles for dark mode as needed */

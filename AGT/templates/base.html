@@ -1,0 +1,59 @@
+<!-- AGT/templates/base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoGameTracker</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Custom styles for light/dark mode -->
+    <link rel="stylesheet" href="{% static 'light-dark.css' %}">
+</head>
+
+  <!-- Include your custom JS files -->
+  <script src="{% static 'base.js' %}"></script>
+  <script src="{% static 'home.js' %}"></script>
+  <!-- Script for light/dark mode toggle -->
+  <script src="{% static 'light-dark.js' %}"></script>
+  
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{% url 'home' %}">AutoGameTracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li>
+                       <!-- Light/Dark mode switch button -->
+                    <button id="light/dark">Light/Dark</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+  
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js">

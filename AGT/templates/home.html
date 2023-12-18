@@ -1,0 +1,35 @@
+<!-- AGT/templates/home.html -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to AutoGameTracker</h1>
+            <p>This is the home page content. Customize it based on your project needs.</p>
+        </div>
+    </div>
+
+    <!-- Player Card -->
+    <div class="row mt-4" id="player-card">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{% static 'path/to/player-avatar.jpg' %}" class="card-img-top" alt="Player Avatar">
+                <div class="overlay">
+                    <h5 class="card-title" id="player-name">Player Name</h5>
+                    <p class="card-text" id="chosen-character">Chosen Character: Character Name</p>
+                    <p class="card-text" id="selected-game">Selected Game: Game Name</p>
+                    <p class="card-text" id="other-stats">Other Stats: More information here</p>
+                    <a href="#" class="btn btn-primary" id="view-profile">View Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
